@@ -20,6 +20,5 @@ print("\n >>> Software Iniciado.")
 # import our chat-bot intents file
 with open('intents_pt.json') as json_data:
     intents = json.load(json_data)
-    intents = intents.decode('utf8')
 
 print(intents)
