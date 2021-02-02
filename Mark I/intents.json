@@ -1,0 +1,19 @@
+{"intents": [
+
+  {"tag": "greeting",
+   "patterns": ["Oi", "Como vai?", "Tem alguém aí?", "Olá", "Pode me ajudar?", "Como você está?", "Como está?" ],
+   "responses": ["Olá, Obrigado por visitar nossa loja", "Que bom te ver aqui novamente", "Oi, como posso ajudar?"],
+   "context_set": ""
+  },
+  {"tag": "goodbye",
+    "patterns": ["tchau", "até mais"],
+    "responses": ["Foi um prazer conversar com você!", "Obrigado pela visita", "Tchau, vejo você em breve!"]
+   },
+   {"tag": "thanks",
+    "patterns": ["Obrigado", "Valeu", "Foi útil"],
+    "responses": ["Estou feliz em ajudar", "Por nada, foi um prazer"],
+    "context_set": ""
+   }
+
+]
+}
