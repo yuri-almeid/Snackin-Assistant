@@ -35,17 +35,11 @@ def say(text):
       res = tts.synthesize(text, accept='audio/mp3', voice='pt-BR_IsabelaV3Voice').get_result()
       audio_file.write(res.content)
     # analiza o arquivo mp3 gerado
-    # tag = TinyTag.get('./speech.mp3')
+    tag = TinyTag.get('./speech.mp3')
     # Reproduz a voz sintetizada
-
-
-    try:
-      playsound('./speech.mp3')
-    except:
-      print("error")
-    
+    playsound('./speech.mp3')    
     # Aguarda fim da fala
-    # time.sleep(tag.duration)
+    time.sleep(tag.duration)
     
 
 '''----------------------------------------------------------------------------'''
