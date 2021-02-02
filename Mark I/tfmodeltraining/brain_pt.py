@@ -1,3 +1,6 @@
+#!/usr/bin/python
+# -*- coding: UTF-8 -*-
+
 print("\n >>> Software Iniciando...")
 
 # Libraries needed for NLP
