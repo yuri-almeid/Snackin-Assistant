@@ -171,5 +171,6 @@ def response(sentence, userID='123', show_details=False):
 
             results.pop(0)
 
+print("Pergunta: Tem alguém aí?")
 print(classify('Tem alguém aí?'))
 print(response('Tem alguém aí?'))
