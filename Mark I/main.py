@@ -1,5 +1,13 @@
+#!/usr/bin/python
+# -*- coding: UTF-8 -*-
+#
+#   Snackin' Assistant Mark I
+#   Author: Yuri L. Almeida
+#
 
-from IBM_interface import *
+
+# Módulos
+from IBM_interface import * 
 tts = IBM_auth()
 
 
