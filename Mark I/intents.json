@@ -7,7 +7,8 @@
   },
   {"tag": "goodbye",
     "patterns": ["tchau", "até mais"],
-    "responses": ["Foi um prazer conversar com você!", "Obrigado pela visita", "Tchau, vejo você em breve!"]
+    "responses": ["Foi um prazer conversar com você!", "Obrigado pela visita", "Tchau, vejo você em breve!"],
+    "context_set": ""
    },
    {"tag": "thanks",
     "patterns": ["Obrigado", "Valeu", "Foi útil"],
