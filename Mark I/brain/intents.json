@@ -37,24 +37,6 @@
                    "Vocês ficam abertos 24 horas?"],
       "responses": ["Estamos abertos 24 horas por dia para te atender da melhor forma!"],
       "context_set": ""
-    },
-
-    {"tag": "acess-store",
-      "patterns": ["Obrigado", 
-                   "Valeu", 
-                   "Foi útil"],
-      "responses": ["Estou feliz em ajudar", 
-                    "Por nada, foi um prazer"],
-      "context_set": ""
-    },
-
-    {"tag": "acess-freezer",
-      "patterns": ["Obrigado", 
-                   "Valeu", 
-                   "Foi útil"],
-      "responses": ["Estou feliz em ajudar", 
-                    "Por nada, foi um prazer"],
-      "context_set": ""
     }
 
   ]

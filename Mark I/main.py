@@ -5,7 +5,7 @@
 #   Author: Yuri L. Almeida
 #
 
-
+### Módulos e Bibliotecas ######################################################
 # Módulos de sitentização de voz
 from IBM_interface import * 
 tts = IBM_auth()
@@ -29,6 +29,7 @@ import json
 
 import pickle
 
+### Define a rede neural e carrega treinamento #################################
 # Transforma o conjunto de bytes em uma hierarquia de objetos
 data = pickle.load( open( "./brain/training_data", "rb" ) )
 words = data['words']
@@ -54,7 +55,7 @@ model = tflearn.DNN(net, tensorboard_dir='tflearn_logs')
 model.load('./brain/model.tflearn')
 
 
-######### Thinking processing ##########
+### Thinking processing ########################################################
 
 def clean_up_sentence(sentence):
     # Tokeniza as sentenças
@@ -117,4 +118,6 @@ def response(sentence, userID='123', show_details=False):
             results.pop(0)
 
 
-#####################################################################
+while True:
+  question = input("Você: ")
+  answer = response(question, show_details=True)
