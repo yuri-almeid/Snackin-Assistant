@@ -121,3 +121,5 @@ def response(sentence, userID='123', show_details=False):
 while True:
   question = input("Você: ")
   answer = response(question, show_details=True)
+  print("Super Smart AI from Snackin': " + answer)
+  say(answer)
