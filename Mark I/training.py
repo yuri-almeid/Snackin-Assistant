@@ -32,12 +32,12 @@ import json
 
 print("\n >>> Carregando intents.json")
 # Pega todos os intents cadastrados
-with open('intents.json') as json_data:
+with open('./brain/intents.json') as json_data:
     intents = json.load(json_data)
 
 # Lista com intents
 print(" >>> Lista com intents:")
-print(intents)
+print(json.dumps(intents, indent=1))
 print("\n\n")
 
 words = []
