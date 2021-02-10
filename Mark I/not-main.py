@@ -1,4 +1,5 @@
-
+#!/usr/bin/python
+# -*- coding: UTF-8 -*-
 
 #
 #   Snackin' Assistant Mark I
