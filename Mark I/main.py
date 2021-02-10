@@ -96,19 +96,19 @@ def classify(sentence):
 
 def response(sentence, userID='123', show_details=False):
     results = classify(sentence)
-    # if we have a classification then find the matching intent tag
+    # Se possui uma classificação então encontra o tag correto
     if results:
-        # loop as long as there are matches to process
+        # Roda enquanto coincidir
         while results:
             for i in intents['intents']:
-                # find a tag matching the first result
+                # Encontra os primeiros resultados coincidentes
                 if i['tag'] == results[0][0]:
-                    # set context for this intent if necessary
+                    # Define contexto para o intent se necessário
                     if 'context_set' in i:
                         if show_details: print ('context:', i['context_set'])
                         context[userID] = i['context_set']
 
-                    # check if this intent is contextual and applies to this user's conversation
+                    # Verifica se o intent possui um contexto e aplica isso na conversa com o usuário
                     if not 'context_filter' in i or \
                         (userID in context and 'context_filter' in i and i['context_filter'] == context[userID]):
                         if show_details: print ('tag:', i['tag'])
@@ -119,7 +119,8 @@ def response(sentence, userID='123', show_details=False):
 
 
 while True:
-  question = input("Você: ")
-  answer = response(question, show_details=True)
-  #print("Super Smart AI from Snackin': " + answer)
+  question = input(">>> Você: ")
+  detail = response(question, show_details=True)
+  answer = str(response(question))
+  print(">>> Super inteligência artificial da Snackin': " + answer)
   say(answer)
