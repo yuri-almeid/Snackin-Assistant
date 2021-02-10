@@ -70,4 +70,4 @@ keyanswer_wake = {
 
 
 
-say('Bem vindo a loja isnéquin melhor loja do mundo')
+say('escreva aqui')

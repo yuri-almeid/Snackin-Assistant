@@ -32,13 +32,13 @@ def IBM_auth():
 # Funçao que reproduz texto falado
 def say(text, tts):
     # Sintetiza voz a partir do texto desejado
-    with open('./speech.mp3', 'wb') as audio_file:
+    with open('./mp3/speech.mp3', 'wb') as audio_file:
       res = tts.synthesize(text, accept='audio/mp3', voice='pt-BR_IsabelaV3Voice').get_result()
       audio_file.write(res.content)
     # analiza o arquivo mp3 gerado
-    tag = TinyTag.get('./speech.mp3')
+    tag = TinyTag.get('./mp3/speech.mp3')
     # Reproduz a voz sintetizada
-    playsound('./speech.mp3')    
+    playsound('./mp3/speech.mp3')    
     # Aguarda fim da fala
     time.sleep(tag.duration)
     
