@@ -123,4 +123,4 @@ while True:
   detail = response(question, show_details=True)
   answer = str(response(question))
   print(">>> Super inteligência artificial da Snackin': " + answer)
-  say(answer)
+  say(answer, tts)
