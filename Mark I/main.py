@@ -11,7 +11,7 @@ from IBM_interface import *
 tts = IBM_auth()
 
 # Aviso inicial
-say('Iniciando programa, por favor aguarde!', tts)
+# say('Iniciando programa, por favor aguarde!', tts)
 
 # Bibliotecas para processamento de linguagem natural
 import nltk
@@ -121,7 +121,7 @@ def response(sentence, userID='123', show_details=False):
 
 while True:
   question = input(">>> Você: ")
-  detail = response(question, show_details=True)
+  # detail = response(question, show_details=True)
   answer = str(response(question))
   print(">>> Super inteligência artificial da Snackin': " + answer)
-  say(answer, tts)
+  # say(answer, tts)
