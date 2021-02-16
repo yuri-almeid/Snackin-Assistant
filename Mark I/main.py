@@ -118,10 +118,10 @@ def response(sentence, userID='123', show_details=False):
 
             results.pop(0)
 
-
+print(" >>> Conversa iniciada")
 while True:
-  question = input(">>> Você: ")
+  question = input(" >>> Você: ")
   # detail = response(question, show_details=True)
   answer = str(response(question))
-  print(">>> Super inteligência artificial da Snackin': " + answer)
+  print(" >>> Super inteligência artificial da Snackin': " + answer)
   # say(answer, tts)
