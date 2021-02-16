@@ -32,7 +32,7 @@ tts.set_service_url(url)
 # Funçao que reproduz texto falado
 def synt(text, name):
     # Sintetiza voz a partir do texto desejado
-    path = './mp3_db/' + name
+    path = './mp3_db/' + name + '.mp3'
     with open(path, 'wb') as audio_file:
       res = tts.synthesize(text, accept='audio/mp3', voice='pt-BR_IsabelaV3Voice').get_result()
       audio_file.write(res.content)
@@ -48,4 +48,4 @@ def synt(text, name):
 '''----------------------------------------------------------------------------'''
 ## Main
 
-synt('Snequim', 'snackin')
+synt('isnéquim', 'snackin')
