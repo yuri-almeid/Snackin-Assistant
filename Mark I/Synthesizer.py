@@ -48,4 +48,4 @@ def synt(text, name):
 '''----------------------------------------------------------------------------'''
 ## Main
 
-synt('Snéquim', 'snackin')
+synt('Snequim', 'snackin')
