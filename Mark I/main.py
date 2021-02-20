@@ -24,3 +24,7 @@ from playsound import playsound # Biblioteca para reprodução de arquivos MP3
 from tinytag import TinyTag # Biblioteca para análise de .mp3
 import time # Biblioteca de delay
 
+
+# Awake
+# Cria rodina que acorda > pega o nome do cliente > Pega a hora exata
+# dá boas vindas ao cliente > Falta pensar no resto
