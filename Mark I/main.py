@@ -50,9 +50,9 @@ awake = True
         result = str(now.strftime("Today is %B, %d, it's a %A")) + '.'
 '''
 
-if (awake	== True){
+if awake	== True:
+
   hour = datetime.now()
   day = date.today()
   print(hour)
 
-}
