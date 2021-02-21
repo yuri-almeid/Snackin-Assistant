@@ -54,5 +54,5 @@ if awake	== True:
 
   hour = datetime.now()
   day = date.today()
-  print(hour)
+  print(hour.day)
 
