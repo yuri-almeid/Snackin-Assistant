@@ -1,5 +1,9 @@
 
 
+
+
+
+
 ## Importando Módulos
 from ibm_watson import TextToSpeechV1 # Biblioteca IBM Watson para TTS
 from ibm_cloud_sdk_core.authenticators import IAMAuthenticator # Biblioteca IBM Watson para autenticação da API
