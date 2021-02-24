@@ -6,13 +6,11 @@
 from datetime import datetime # módulo de tempo
 from datetime import date # Módulo de tempo (data)
 import requests
-import flask
+#import flask
 import random
 import json
 
 
-
-# Awake
 # Cria rodina que acorda > (pegar da API)
 # Pega o nome do cliente > (pegar da API) 
 # Pega a hora exata > (ok)
