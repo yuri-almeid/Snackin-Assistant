@@ -24,8 +24,6 @@ from pydantic import BaseModel # Criação de base de dados
 # Rotina: Saída > ()
 # Pensar no resto > (working on it)
 
-# Variável que define se de fato deve acordar ou não
-awake = True
 
 # Cria aplicação da API
 app = FastAPI()
@@ -43,7 +41,7 @@ c_weekend = ['que tal uma bebida gelada para aproveitar o seu final de semana?',
 
 
 @app.post("/")
-def wellcome(user: User):
+def welcome(user: User):
 
   # Cria objeto do log
   log = {'nome': '',
