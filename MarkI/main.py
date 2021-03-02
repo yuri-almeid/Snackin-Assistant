@@ -89,8 +89,15 @@ def welcome(user: User):
     msg = msg + ', ' + random.choice(c_weekend)
 
   log['Mensagem'] = msg
-
+  # Colocar json response
   return log
 
 
 # RODA COM: uvicorn main:app --reload
+
+# nginx <- 2way-dns (parecido) Escuta uma porta ()
+# superviser <- Monitora um processo, responsavel por reproduzir o uvicorn (facil de achar)
+
+# Ip tem que ser fix
+
+# ip > nginx > uvicorn > retorno
