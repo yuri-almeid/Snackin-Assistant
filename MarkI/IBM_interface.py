@@ -6,6 +6,9 @@ from playsound import playsound # Biblioteca para reprodução de arquivos MP3
 from tinytag import TinyTag # Biblioteca para análise de .mp3
 import time # Biblioteca de delay
 
+import os
+
+
 def IBM_auth():
   print(" >>> Iniciando autenticação do IBM Watson...")
   print()
@@ -31,13 +34,22 @@ def IBM_auth():
 # Funçao que reproduz texto falado
 def say(text, tts):
     # Sintetiza voz a partir do texto desejado
-    with open('./mp3/speech.mp3', 'wb') as audio_file:
+    with open('speech.mp3', 'wb') as audio_file:
       res = tts.synthesize(text, accept='audio/mp3', voice='pt-BR_IsabelaV3Voice').get_result()
       audio_file.write(res.content)
+    
+    # toca mp3 pelo sistema linux
+    os.system('./say.sh')  
+    
     # analiza o arquivo mp3 gerado
-    tag = TinyTag.get('./mp3/speech.mp3')
+    #tag = TinyTag.get('speech.mp3')
     # Reproduz a voz sintetizada
-    playsound('./mp3/speech.mp3')    
+    #playsound('speech.mp3')    
     # Aguarda fim da fala
-    time.sleep(tag.duration)
+    #time.sleep(tag.duration)
+    
+    
+    
+    
+    
     

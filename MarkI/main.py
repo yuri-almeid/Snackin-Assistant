@@ -14,16 +14,11 @@ from fastapi import FastAPI # Módulo para o FASTAPI
 import uvicorn # Modulo para rodar o fastapi
 from pydantic import BaseModel # Criação de base de dados
 
-# Cria rodina que acorda > (OK)
-# Pega o nome do cliente > (OK) 
-# Pega a hora exata > (ok)
-# Dá boas vindas ao cliente > (ok)
-# Criar log > (ok)
-# Separar Rotinas (chegada, permanência, saída) > (ok)
-# Rotina: Chegada > (ok)
-# Rotina: Permanência > ()
-# Rotina: Saída > ()
-# Pensar no resto > (working on it)
+from IBM_interface import * # Interface da IBM para sintetizar voz
+tts = IBM_auth() # Realiza autenticação e cria o objeto TTS
+
+from playsound import playsound # Biblioteca para reprodução de arquivos MP3
+from tinytag import TinyTag # Biblioteca para análise de .mp3
 
 
 # Cria aplicação da API
@@ -37,7 +32,7 @@ class User(BaseModel):
 # Banco de respostas prontas
 c_greeting = ['como vai?', 'como tem passado?', 'que bom te ver aqui!', 'fico feliz em te ver aqui',
                 'desejo boas compras!', 'te desejo uma boa experiência Snackin']
-c_weekend = ['que tal uma bebida gelada para aproveitar o seu final de semana?',
+c_weekend = ['Aproveite o seu final de semana!',
           'desejamos um excelente final de semana!']
 
 
@@ -90,14 +85,13 @@ def welcome(user: User):
 
   log['Mensagem'] = msg
   # Colocar json response
+  print(log)
+  say(msg, tts)
+  
+  
+  
   return log
 
 
 # RODA COM: uvicorn main:app --reload
 
-# nginx <- 2way-dns (parecido) Escuta uma porta ()
-# superviser <- Monitora um processo, responsavel por reproduzir o uvicorn (facil de achar)
-
-# Ip tem que ser fix
-
-# ip > nginx > uvicorn > retorno
