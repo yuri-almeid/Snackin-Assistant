@@ -86,6 +86,9 @@ def welcome(user: User):
   log['Mensagem'] = msg
   # Colocar json response
   print(log)
+  
+  # sudo apt-get install sox
+  # sudo apt-get install sox libsox-fmt-all
   say(msg, tts)
   
   

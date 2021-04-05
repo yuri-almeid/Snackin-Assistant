@@ -2,10 +2,9 @@
 ## Importando Módulos
 from ibm_watson import TextToSpeechV1 # Biblioteca IBM Watson para TTS
 from ibm_cloud_sdk_core.authenticators import IAMAuthenticator # Biblioteca IBM Watson para autenticação da API
-from playsound import playsound # Biblioteca para reprodução de arquivos MP3
-from tinytag import TinyTag # Biblioteca para análise de .mp3
-import time # Biblioteca de delay
-
+# from playsound import playsound # Biblioteca para reprodução de arquivos MP3
+# from tinytag import TinyTag # Biblioteca para análise de .mp3
+# import time # Biblioteca de delay
 import os
 
 
