@@ -106,10 +106,10 @@ def get_user_by_id(user_id: int):
 def presentation():
   
   say('Olá pessoal, eu sou a Kin, sou a nova assistente dos mercados isnéquin!', tts)
-  say('É um grande prazer conhece-los!', tts)
+  say('É um grande prazer conhecê-los!', tts)
   
   
-  return True
+  return 'Apresentação finalizada'
 
 
 # RODA COM: uvicorn main:app --reload
