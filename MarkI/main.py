@@ -17,8 +17,8 @@ from pydantic import BaseModel # Criação de base de dados
 from IBM_interface import * # Interface da IBM para sintetizar voz
 tts = IBM_auth() # Realiza autenticação e cria o objeto TTS
 
-from playsound import playsound # Biblioteca para reprodução de arquivos MP3
-from tinytag import TinyTag # Biblioteca para análise de .mp3
+# from playsound import playsound # Biblioteca para reprodução de arquivos MP3
+# from tinytag import TinyTag # Biblioteca para análise de .mp3
 
 
 # Cria aplicação da API
@@ -77,7 +77,7 @@ def welcome(user: User):
 
 
   # Concatena a saudação com o nome do cliente e um complemento inicial
-  msg = greating + spc + name + spc + random.choice(c_greeting)
+  msg = greating + spc + name + ',' + spc + random.choice(c_greeting)
 
   # Mensagem extra para final de semana (sextou)
   if day == 'Friday' or day == 'Saturday':
@@ -94,6 +94,22 @@ def welcome(user: User):
   
   
   return log
+
+
+# Rota Get Id
+@app.get("/User/{user_id}")
+def get_user_by_id(user_id: int):
+  return {"Status": 404, "Message": "User not found"}
+
+# Rota Presentation
+@app.get("/presentation")
+def presentation():
+  
+  say('Olá pessoal, eu sou a Kin, sou a nova assistente dos mercados isnéquin!', tts)
+  say('É um grande prazer conhece-los!', tts)
+  
+  
+  return True
 
 
 # RODA COM: uvicorn main:app --reload
