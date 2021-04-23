@@ -95,17 +95,11 @@ def welcome(user: User):
   
   return log
 
-
-# Rota Get Id
-@app.get("/User/{user_id}")
-def get_user_by_id(user_id: int):
-  return {"Status": 404, "Message": "User not found"}
-
 # Rota Presentation
 @app.get("/presentation")
 def presentation():
   
-  say('Olá pessoal, eu sou a Kin, sou a nova assistente dos mercados isnéquin!', tts)
+  say('Olá, eu sou a Kin, sou a nova assistente dos mercados isnéquin!', tts)
   say('É um grande prazer conhecê-los!', tts)
   
   
