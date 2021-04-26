@@ -52,22 +52,16 @@ tts.set_service_url(url)
 '''----------------------------------------------------------------------------'''
 ## TTS
 # Funçao que reproduz texto falado
-def synt(text, name):
+def synt(text):
     # Sintetiza voz a partir do texto desejado
-    path = './mp3_db/' + name + '.mp3'
-    with open(path, 'wb') as audio_file:
+    with open('speech.mp3', 'wb') as audio_file:
       res = tts.synthesize(text, accept='audio/mp3', voice='pt-BR_IsabelaV3Voice').get_result()
       audio_file.write(res.content)
     # analiza o arquivo mp3 gerado
-    tag = TinyTag.get(path)
-    # Reproduz a voz sintetizada
-    playsound(path)    
-    # Aguarda fim da fala
-    time.sleep(tag.duration)
     
 
 
 '''----------------------------------------------------------------------------'''
 ## Main
 
-synt('isnéquim', 'snackin')
+synt('Testando, 1 2 3, Teste, Isnéquin')

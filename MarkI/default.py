@@ -125,6 +125,19 @@ def kin_presentation():
     )
     return response
 
+
+@app.route("/kin/teste")
+def kin_test():
+    
+    os.system('./say_test.sh')
+    
+    response = app.response_class(
+        response={},
+        status=200,
+        mimetype='application/json'
+    )
+    return response
+
 @app.route("/kin/{user}")
 def kin_welcome(user: str):
     
