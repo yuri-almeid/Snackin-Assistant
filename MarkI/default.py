@@ -115,8 +115,8 @@ def sala():
 @app.route("/kin")
 def kin_presentation():
     
-    say('Olá, eu sou a Kin, sou a nova assistente dos mercados isnéquin!', tts)
-    say('É um grande prazer conhecê-los!', tts)
+    say('''Olá, eu sou a Kin, sou a nova assistente dos mercados isnéquin! 
+        É um grande prazer conhecê-los!''', tts)
     
     response = app.response_class(
         response={},
@@ -139,7 +139,7 @@ def kin_test():
     return response
 
 @app.route("/kin/{user}")
-def kin_welcome(user: str):
+def kin_welcome(user):
     
     
     # Cria objeto do log
