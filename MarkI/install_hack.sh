@@ -6,12 +6,12 @@ sudo apt install mpg123
 
 echo Subistuindo arquivo default
 sudo mv /var/codigo/app/controllers/default.py /var/codigo/app/controllers/default_old.py 
-sudo cp /Snackin-Assistant/MarkI/default.py /var/codigo/app/controllers/
+sudo cp Snackin-Assistant/MarkI/default.py /var/codigo/app/controllers/
 sudo chmod 777 /var/codigo/app/controllers/default.py
 
 echo Copiando os arquivos .sh
-sudo cp /Snackin-Assistant/MarkI/say.sh /var/codigo/
-sudo cp /Snackin-Assistant/MarkI/say_test.sh /var/codigo/
+sudo cp Snackin-Assistant/MarkI/say.sh /var/codigo/
+sudo cp Snackin-Assistant/MarkI/say_test.sh /var/codigo/
 sudo chmod 777 /var/codigo/say_test.sh
 sudo chmod 777 /var/codigo/say.sh
 
