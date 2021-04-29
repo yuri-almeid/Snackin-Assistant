@@ -92,7 +92,7 @@ def index():
     
 
 @app.route("/abrir")
-@app.route("/abrir/kin")
+@app.route("/abrir/kin", methods = ['POST'])
 def sala():
     print('Abrindo porta')
     gpio.output(11, gpio.HIGH)
