@@ -4,7 +4,6 @@ from app.models.tables import User
 from app.models.forms import LoginForm
 from flask_login import login_user
 from flask import json
-from flask import request
 import RPi.GPIO as gpio
 import time
 
@@ -92,9 +91,7 @@ def index():
     
 
 @app.route("/abrir")
-@app.route("/abrir/kin", methods = ['POST'])
 def sala():
-    print('Abrindo porta')
     gpio.output(11, gpio.HIGH)
     gpio.output(16, gpio.HIGH)
     gpio.output(18, gpio.HIGH)
@@ -107,17 +104,49 @@ def sala():
     gpio.output(22, gpio.LOW)
     gpio.output(36, gpio.HIGH)
     
+    response = app.response_class(
+        response={},
+        status=200,
+        mimetype='application/json'
+    )
+    return response
+
+# Snackin init ----
+@app.route("/kin")
+def kin_presentation():
+    
+    say('''Olá, eu sou a Kin, sou a nova assistente dos mercados isnéquin! 
+        É um grande prazer conhecê-los!''', tts)
+    
+    response = app.response_class(
+        response={},
+        status=200,
+        mimetype='application/json'
+    )
+    return response
+
+
+@app.route("/kin/teste")
+def kin_test():
+    
+    os.system('./say_test.sh')
+    
+    response = app.response_class(
+        response={},
+        status=200,
+        mimetype='application/json'
+    )
+    return response
+
+@app.route("/kin/{user}")
+def kin_welcome(user):
+    
     
     # Cria objeto do log
     log = {'nome': '',
             'data': {'data': '',
                             'hora': '',
                             'dia': ''}}
-    
-    
-    print (request.is_json)
-    user = request.get_json()
-    print (user)
     
     # Pega o nome e localização do cliente
     name = user.name
@@ -170,14 +199,5 @@ def sala():
     )
     return response
 
-@app.route("/kin/teste")
-def kin_test():
-    
-    os.system('./say_test.sh')
-    
-    response = app.response_class(
-        response={},
-        status=200,
-        mimetype='application/json'
-    )
-    return response
+
+# Snackin end ----
