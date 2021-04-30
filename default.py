@@ -4,6 +4,7 @@ from app.models.tables import User
 from app.models.forms import LoginForm
 from flask_login import login_user
 from flask import json
+from flask import request
 import RPi.GPIO as gpio
 import time
 
@@ -92,6 +93,7 @@ def index():
 
 @app.route("/abrir")
 def sala():
+    print('Abrindo porta')
     gpio.output(11, gpio.HIGH)
     gpio.output(16, gpio.HIGH)
     gpio.output(18, gpio.HIGH)
@@ -104,43 +106,6 @@ def sala():
     gpio.output(22, gpio.LOW)
     gpio.output(36, gpio.HIGH)
     
-    response = app.response_class(
-        response={},
-        status=200,
-        mimetype='application/json'
-    )
-    return response
-
-# Snackin init ----
-@app.route("/kin")
-def kin_presentation():
-    
-    say('''Olá, eu sou a Kin, sou a nova assistente dos mercados isnéquin! 
-        É um grande prazer conhecê-los!''', tts)
-    
-    response = app.response_class(
-        response={},
-        status=200,
-        mimetype='application/json'
-    )
-    return response
-
-
-@app.route("/kin/teste")
-def kin_test():
-    
-    os.system('./say_test.sh')
-    
-    response = app.response_class(
-        response={},
-        status=200,
-        mimetype='application/json'
-    )
-    return response
-
-@app.route("/kin/{user}")
-def kin_welcome(user):
-    
     
     # Cria objeto do log
     log = {'nome': '',
@@ -148,8 +113,14 @@ def kin_welcome(user):
                             'hora': '',
                             'dia': ''}}
     
+    
+    user = request.args.get('data')
+    print (user)
+    json_user = json.loads(user)
+    print (json_user)
+    
     # Pega o nome e localização do cliente
-    name = user.name
+    name = json_user['name']
     log['nome'] = name
 
     spc = ' ' # apenas uma variável facilitatória
@@ -186,9 +157,7 @@ def kin_welcome(user):
     log['Mensagem'] = msg
     # Colocar json response
     print(log)
-    
-    # sudo apt-get install sox
-    # sudo apt-get install sox libsox-fmt-all
+
     say(msg, tts)
     
     
@@ -199,5 +168,14 @@ def kin_welcome(user):
     )
     return response
 
-
-# Snackin end ----
+@app.route("/kin/teste")
+def kin_test():
+    
+    os.system('./say_test.sh')
+    
+    response = app.response_class(
+        response={},
+        status=200,
+        mimetype='application/json'
+    )
+    return response
