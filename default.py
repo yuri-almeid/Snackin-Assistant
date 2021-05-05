@@ -54,7 +54,7 @@ def say(text, tts):
 
 # Banco de respostas prontas
 c_greeting = ['como vai?', 'como tem passado?', 'que bom te ver aqui!', 'fico feliz em te ver aqui',
-                'desejo boas compras!', 'te desejo uma boa experiência Snackin']
+                'desejo boas compras!', 'te desejo uma boa experiência isnéquin']
 c_weekend = ['Aproveite o seu final de semana!',
           'desejamos um excelente final de semana!']
 
@@ -148,7 +148,7 @@ def sala():
 
 
     # Concatena a saudação com o nome do cliente e um complemento inicial
-    msg = greating + spc + name + ',' + spc + random.choice(c_greeting)
+    msg = greating + spc + name + ',' + 'Eu sou a kin da Isnéquin,' + spc + random.choice(c_greeting)
 
     # Mensagem extra para final de semana (sextou)
     if day == 'Friday' or day == 'Saturday':
