@@ -9,7 +9,7 @@ import RPi.GPIO as gpio
 import time
 
 
-# Snackin init ---
+# Snackin init --------------------------------------------------------
 from datetime import datetime # módulo de tempo
 from datetime import date # Módulo de tempo (data)
 import requests # Módulo para webrequest
@@ -59,11 +59,7 @@ c_weekend = ['Aproveite o seu final de semana!',
           'desejamos um excelente final de semana!']
 
 tts = IBM_auth()
-
-
-
-
-# Snackin end ----
+# Snackin end --------------------------------------------------------
 
 
 
@@ -106,7 +102,7 @@ def sala():
     gpio.output(22, gpio.LOW)
     gpio.output(36, gpio.HIGH)
     
-    
+    # Snackin init --------------------------------------------------------
     # Cria objeto do log
     log = {'nome': '',
             'data': {'data': '',
@@ -160,6 +156,7 @@ def sala():
 
     say(msg, tts)
     
+    # Snackin end --------------------------------------------------------
     
     response = app.response_class(
         response={},
@@ -168,6 +165,8 @@ def sala():
     )
     return response
 
+
+# Snackin init --------------------------------------------------------
 @app.route("/kin/teste")
 def kin_test():
     
@@ -179,3 +178,4 @@ def kin_test():
         mimetype='application/json'
     )
     return response
+# Snackin end --------------------------------------------------------
